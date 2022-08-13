@@ -28,6 +28,8 @@ func succWithJSON(c *gin.Context, data interface{}) {
 }
 
 func failedWithError(c *gin.Context, err error) {
+	logrus.Errorf("%+v", errors.Wrap(err, "internal error"))
+
 	c.JSON(status.OK, CommonResponse{
 		Status:  false,
 		Message: err.Error(),

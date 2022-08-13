@@ -9,15 +9,6 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-type GetFeatureBlogsObject struct {
-	ID   string
-	Idx  int
-	Name string
-	URL  string
-	Tags []string
-	Sign string
-}
-
 // GetFeatureBlogs handle GET /feature-blogs
 func GetFeatureBlogs(c *gin.Context) {
 	p := getProvider(c)
